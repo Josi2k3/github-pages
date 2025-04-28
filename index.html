@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josiah's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0b0b;
+      color: white;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    .logo {
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: white;
+    }
+    nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s;
+      position: relative;
+    }
+    nav a.active, nav a:hover {
+      color: #00FFFF;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+      min-height: 100vh;
+    }
+    .left, .right {
+      flex: 1 1 400px;
+      padding: 2rem;
+    }
+    .left {
+      font-size: 2rem;
+      font-weight: bold;
+      line-height: 1.3;
+    }
+    .highlight-cyan { color: #00FFFF; }
+    .highlight-green { color: #00FF7F; }
+    .highlight-yellow { color: #FFD700; }
+    .highlight-pink { color: #FF69B4; }
+    .left-small-text {
+      font-size: 1rem;
+      color: #aaaaaa;
+      font-weight: 400;
+      margin-top: 2rem;
+    }
+    .right {
+      position: relative;
+    }
+    .background-box {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: linear-gradient(135deg, #0057ff, #00ffff);
+      border-radius: 20px;
+      opacity: 0.25;
+      z-index: 0;
+      filter: blur(20px);
+    }
+    .code-block {
+      position: relative;
+      background-color: #1e1e1e;
+      padding: 2rem;
+      border-radius: 1rem;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 550px;
+      color: #d4d4d4;
+      box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+      z-index: 1;
+      overflow-x: auto;
+    }
+    /* Code colors */
+    .comment { color: #6A9955; font-style: italic; }
+    .keyword { color: #C586C0; }
+    .function { color: #569CD6; }
+    .variable { color: #4EC9B0; }
+    .string { color: #CE9178; }
+    .property { color: #9CDCFE; }
+    .bracket { color: #FFD700; }
+    .comma { color: #DCDCAA; }
+
+    section {
+      padding: 5rem 2rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #00FFFF;
+    }
+    .section-content {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.7;
+      font-size: 1.2rem;
+    }
+    @media (max-width: 768px) {
+      nav a { margin-left: 1rem; font-size: 0.9rem; }
+      .left { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Josiah.</div>
+  <nav>
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#history" class="nav-link">History</a>
+    <a href="#accomplishments" class="nav-link">Accomplishments</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </nav>
+</header>
+
+<div id="home" class="container">
+  <div class="left">
+    <span class="highlight-cyan">Welcome!</span> 
+    <span>This site is where my </span>
+    <span class="highlight-green">business acumen</span> 
+    <span>meets my </span>
+    <span class="highlight-yellow">passion for technology</span> 
+    <span>and </span>
+    <span class="highlight-pink">creative projects.</span><br><br>
+    <span>Take a look around and see what I’m building!</span>
+
+    <div class="left-small-text">
+      Well, what are you waiting for? Click on any of the text on the top right, or feel free to scroll through this page.
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="background-box"></div>
+    <div class="code-block">
+      <span class="comment">// About Me</span><br>
+      <span class="keyword">const</span> <span class="variable">aboutMe</span> <span class="bracket">=</span> <span class="bracket">{</span><br>
+      &nbsp;&nbsp;<span class="property">name</span><span class="bracket">:</span> <span class="string">"Josiah"</span><span class="comma">,</span><br>
+      &nbsp;&nbsp;<span class="property">degree</span><span class="bracket">:</span> <span class="string">"Bachelor's in Finance"</span><span class="comma">,</span><br>
+      &nbsp;&nbsp;<span class="property">skills</span><span class="bracket">:</span> <span class="bracket">[</span><span class="string">"Web Development"</span><span class="comma">,</span> <span class="string">"Finance"</span><span class="comma">,</span> <span class="string">"Business Strategy"</span><span class="bracket">]</span><span class="comma">,</span><br>
+      &nbsp;&nbsp;<span class="property">message</span><span class="bracket">:</span> <span class="string">"Passionate about bridging the gap between tech and finance."</span><br>
+      <span class="bracket">}</span><span class="comma">;</span>
+    </div>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="section-title">Projects</div>
+  <div class="section-content">
+    <p>Built a budgeting app with live financial tracking. Developed a portfolio dashboard using React and Chart.js. Working on a startup focused on AI-based investment advice.</p>
+  </div>
+</section>
+
+<section id="history">
+  <div class="section-title">History</div>
+  <div class="section-content">
+    <p>Graduated with honors in Finance. Completed internships at JPMorgan and a fintech startup. Always learning, always building.</p>
+  </div>
+</section>
+
+<section id="accomplishments">
+  <div class="section-title">Accomplishments</div>
+  <div class="section-content">
+    <p>Dean's List 4x. Led a team to win 1st place at a university startup competition. Self-taught JavaScript, Python, and frontend design.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">Contact</div>
+  <div class="section-content">
+    <p>Let's connect! Reach out at <span style="color: #00FFFF;">josiah@email.com</span> or via LinkedIn.</p>
+  </div>
+</section>
+
+<script>
+  // Highlight active nav link on scroll
+  const sections = document.querySelectorAll('section, .container');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+
+    // Scroll animation
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        section.classList.add('visible');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
